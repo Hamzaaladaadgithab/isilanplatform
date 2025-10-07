@@ -7,34 +7,33 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 
-class JobVacancy extends Model
+class Resume extends Model
 {
-
     use HasFactory,HasUuids , SoftDeletes;
 
 
 
-    protected $table = 'job_vacancies';
+    protected $table = 'resumes';
 
     protected $keyType = 'string';
     public $incrementing = false;
 
 
-
     protected $fillable = [
-        'title',
-        'description',
-        'location',
-        'type',
-        'salary',
-        'company_id',
-        'jobcategory_id',
+        'filename',
+        'fileurl',
+        'summary',
+        'contacDetails',
+        'education',
+        'experience',
+        'skills',
+        'userid',
     ];
-
 
     protected $dates=[
         'deleted_at'
     ];
+
 
     protected function casts(): array{
         return [
@@ -44,22 +43,16 @@ class JobVacancy extends Model
     }
 
 
-
-    public function jobcategory(){
-        return $this->belongsTo(JobCategory::class,'jobcategory_id','id');
+    public function user(){
+        return $this->belongsTo(User::class,'userid','id');
     }
-
-    public function company(){
-        return $this->belongsTo(Company::class,'company_id','id');
-    }
-
 
 
     public function jobapplications(){
-        return $this->hasMany(JobApplication::class,'job_vacancyid','id');
+        return $this->hasMany(JobApplication::class,'resumeid','id');
     }
 
-
+    
 
 
 
