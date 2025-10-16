@@ -11,7 +11,6 @@ class Company extends Model
 {
     use HasFactory,HasUuids , SoftDeletes;
 
-
     protected $table = 'companies';
 
 
@@ -51,6 +50,11 @@ protected $dates=[
     }
 
 
-    
+    public function jobapplications(){
+        return $this->hasManyThrough(JobApplication::class,JobVacancy::class,'company_id','jobvacancyid','id','id');
+    }
+
+
+
 
 }

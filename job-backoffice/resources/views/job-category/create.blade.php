@@ -6,7 +6,7 @@
     </x-slot>
 
     <div class="overflow-x-auto p-6">
-        <div class="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-md">
+        <div class="w-full mx-auto p-6 bg-white rounded-lg shadow-md">
             <form method="POST" action="{{ route('job-category.store') }}">
                 @csrf
                 <div class="mb-4">

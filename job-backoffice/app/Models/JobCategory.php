@@ -20,6 +20,7 @@ class JobCategory extends Model
 
 
 
+
     protected $fillable = ['name'];
 
     protected $dates=[
@@ -39,7 +40,7 @@ class JobCategory extends Model
     }
 
 
-    
+
 
 
 

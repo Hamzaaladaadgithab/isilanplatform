@@ -12,17 +12,19 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth')->group(function () {
 
-
         Route::get('/', action: [DashboardController::class, 'index'])->name('dashboard');
 
         // Companies
         Route::resource('company', CompanyController::class);
+        Route::post('company/{id}/restore', [CompanyController::class, 'restore'])->name('company.restore');
 
         // Job Applications
         Route::resource('job-application', JobApplicationController::class);
 
         // Job Categories
         Route::resource('job-category', JobCategoryController::class);
+
+        Route::post('job-category/{id}/restore', [JobCategoryController::class, 'restore'])->name('job-category.restore');
 
 
         // Job Vacancies
