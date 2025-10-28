@@ -1,4 +1,4 @@
-x-app-layout>
+<x-app-layout>
 <x-slot name="header">
 <h2 class="font-semibold text-xl text-gray-800 leading-tight">
 {{ __('Add Job Vacancy') }}
@@ -112,9 +112,10 @@ x-app-layout>
                     <textarea name="description" id="description"
                         rows="4" class="mt-1 block w-full rounded-md shadow-sm border-gray-300 focus:border-indigo-500 focus:ring-indigo-500"
                         required>{{ old('description') }}</textarea>
-                     <!-- Added @error handling -->
+
+
                      @error('description')
-                        <p class="text-red-500 text-xs italic mt-2">{{ $message }}</p>
+                        <p class="text-red-500 text-xs italic mt-2">{{$message}}</p>
                     @enderror
                 </div>
 
@@ -123,7 +124,7 @@ x-app-layout>
             <div class="flex justify-end space-x-4">
 
                 <!-- Cancel button -->
-                <a href="{{ route('job-vacancy.index') }}"
+                <a href="{{route('job-vacancy.index')}}"
                 class=" px-2 py-2 inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800 mr-4">
                 ❌ Cancel
                 </a>

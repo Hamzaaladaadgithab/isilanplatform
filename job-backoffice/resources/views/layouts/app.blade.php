@@ -13,28 +13,26 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
-
-
     </head>
     <body class="font-sans antialiased">
         <div class="flex">
             @include('layouts.navigation')
 
-
             <div class="flex-1 min-h-screen bg-gray-100">
-            <!-- Page Heading -->
-            @isset($header)
-                <header class="bg-white shadow">
-                    <div class="py-4 px-4 w-full">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endisset
+                <!-- Page Heading -->
+                @isset($header)
+                    <header class="bg-white shadow">
+                        <div class="py-4 px-4 w-full">
+                            {{ $header }}
+                        </div>
+                    </header>
+                @endisset
 
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
+                <!-- Page Content -->
+                <main>
+                    {{ $slot }}
+                </main>
+            </div> <!-- ← هذا كان مفقود -->
         </div>
     </body>
 </html>

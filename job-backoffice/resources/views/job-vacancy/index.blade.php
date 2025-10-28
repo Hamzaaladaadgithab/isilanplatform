@@ -50,7 +50,7 @@
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{{ $job_vacancy->company?->name ?? 'N/A' }}</td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{{ $job_vacancy->location }}</td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{{ $job_vacancy->type }}</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">USD {{ number_format($job_vacancy->salary, 2) }}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{{ number_format($job_vacancy->salary, 2) }} USD</td>
 
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                             @if(request()->input('archived') == 'true')
