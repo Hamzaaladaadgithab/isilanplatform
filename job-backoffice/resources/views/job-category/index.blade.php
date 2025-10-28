@@ -3,8 +3,6 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             Job-Categories  {{request()->input('archived')== 'true' ? '(Archived)' : '(Active)'}}
 
-
-
         </h2>
     </x-slot>
 
@@ -89,7 +87,7 @@
 
                             </form>
                         </td>
-                        
+
 
 
                     @else

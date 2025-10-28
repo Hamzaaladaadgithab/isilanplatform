@@ -30,8 +30,10 @@ public $industries =['Technology', 'Finance','Healthcare','Education','Manufactu
 
 
     public function index(Request $request)
-    {
+    {  //active
         $query = Company::latest();
+
+        //archived
 
         if($request->input('archived')==true) {
             $query->onlyTrashed();
