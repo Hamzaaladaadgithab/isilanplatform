@@ -16,15 +16,16 @@ Route::middleware('auth')->group(function () {
 
         // Companies
         Route::resource('company', CompanyController::class);
-        Route::post('company/{id}/restore', [CompanyController::class, 'restore'])->name('company.restore');
+        Route::put('company/{id}/restore', [CompanyController::class, 'restore'])->name('company.restore');
 
         // Job Applications
         Route::resource('job-application', JobApplicationController::class);
+        Route::put('job-application/{id}/restore', [JobApplicationController::class, 'restore'])->name('job-application.restore');
 
         // Job Categories
         Route::resource('job-category', JobCategoryController::class);
 
-        Route::post('job-category/{id}/restore', [JobCategoryController::class, 'restore'])->name('job-category.restore');
+        Route::put('job-category/{id}/restore', [JobCategoryController::class, 'restore'])->name('job-category.restore');
 
 
         // Job Vacancies

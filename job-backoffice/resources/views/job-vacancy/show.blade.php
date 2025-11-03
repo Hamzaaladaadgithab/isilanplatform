@@ -42,7 +42,7 @@
 
                 {{-- DÜZELTME: 'jobvacancy' -> 'job_vacancy' olarak değiştirildi --}}
                 <form action="{{ route('job-vacancy.destroy', ['job_vacancy' => $jobvacancy->id]) }}" method="POST"
-                      onsubmit="return confirm('Are you sure you want to archive this job vacancy?');">
+                    onsubmit="return confirm('Are you sure you want to archive this job vacancy?');">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
@@ -51,7 +51,7 @@
                 </form>
 
                 <a href="{{ route('job-vacancy.index') }}"
-                   class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
+                class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
                     Back To List
                 </a>
             </div>
@@ -64,7 +64,7 @@
             <li>
                     {{-- DÜZELTME: 'jobvacancy' -> 'job_vacancy' olarak değiştirildi --}}
                     <a href="{{ route('job-vacancy.show', ['job_vacancy' => $jobvacancy->id, 'tab' => 'applications']) }}"
-                       class="px-4 py-2 text-gray-800 font-semibold {{ request('tab') == 'applications' || request('tab') == '' ? 'bg-blue-500 text-white' : '' }}">
+                    class="px-4 py-2 text-gray-800 font-semibold {{ request('tab') == 'applications' || request('tab') == '' ? 'bg-blue-500 text-white' : '' }}">
                         Applications
                     </a>
                 </li>
